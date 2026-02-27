@@ -5,17 +5,17 @@ public class BankAccount {
     private int balance = 1000; // Shared resource (bank balance)
 
     // Synchronized method for deposit operation
-    public void deposit(int amount)
+    public synchronized void deposit(int amount)
     {
-        balance += amount;
+        balance = balance + amount;
         System.out.println("Deposited: " + amount + ", Balance: " + balance);
     }
 
     // Synchronized method for withdrawal operation
-    public void withdraw(int amount)
+    public synchronized void withdraw(int amount)
     {
         if (balance >= amount) {
-            balance -= amount;
+            balance = balance -  amount;
             System.out.println("Withdrawn: " + amount + ", Balance: " + balance);
         }
         else {
