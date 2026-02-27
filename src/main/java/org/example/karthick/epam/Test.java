@@ -20,6 +20,10 @@ public class Test {
         testObj.printList(words);
         testObj.notRepeatChars(input);
         testObj.flattenMap();
+
+        String sentence = "This is new sentence";
+        testObj.countWordFreq(sentence);
+        
     }
 
 
@@ -71,5 +75,12 @@ public class Test {
                 .collect(Collectors.toList());
 
         System.out.println(flat); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    }
+
+    public void countWordFreq(String str){
+
+        Map<String, Long> freq = Arrays.stream(str.split(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        freq.forEach((word, count) -> System.out.println(word + " : " + count));
     }
 }
