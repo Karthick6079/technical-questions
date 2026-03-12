@@ -7,5 +7,7 @@ public class AnagramTest {
         System.out.println(anagram.isAnagram("anagram","nagaram"));
         System.out.println(anagram.isAnagram("car","cat"));
 
+        anagram.isAnagramUsingSorted("anagram","nagasram");
+
     }
 }

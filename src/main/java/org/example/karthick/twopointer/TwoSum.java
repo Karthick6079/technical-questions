@@ -1,4 +1,4 @@
-package org.example.karthick;
+package org.example.karthick.twopointer;
 
 import java.util.HashMap;
 import java.util.Map;

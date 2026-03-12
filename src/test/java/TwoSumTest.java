@@ -1,4 +1,4 @@
-import org.example.karthick.TwoSum;
+import org.example.karthick.twopointer.TwoSum;
 
 import java.util.Arrays;
 

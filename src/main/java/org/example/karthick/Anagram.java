@@ -1,7 +1,10 @@
 package org.example.karthick;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Anagram {
 
@@ -29,7 +32,30 @@ public class Anagram {
 
         return true;
 
+    }
 
+    public void isAnagramUsingSorted(String s, String t){
 
+        char[] sChars = s.toCharArray();
+        char[] tChars = t.toCharArray();
+
+        Arrays.sort(sChars);
+        Arrays.sort(tChars);
+
+        if(new String(sChars).equals(new String(tChars))){
+            System.out.println("Yess");
+        }
+
+        System.out.println("No");
+        
+
+        // Sort using the java streams
+
+        String sSorted = Stream.of(s.split("")).sorted().collect(Collectors.joining());
+        String tSorted = Stream.of(t.split("")).sorted().collect(Collectors.joining());
+
+        if(sSorted.equals(tSorted)){
+            System.out.println("The given strings is Anagram");
+        }
     }
 }

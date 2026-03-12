@@ -23,7 +23,7 @@ public class Test {
 
         String sentence = "This is new sentence";
         testObj.countWordFreq(sentence);
-        
+
     }
 
 
